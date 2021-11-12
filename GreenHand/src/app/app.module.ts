@@ -1,16 +1,25 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddMaterialComponent } from './components/add-material/add-material.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddMaterialComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+    /*NgbModule,
+    NgSelectModule*/
   ],
   providers: [],
   bootstrap: [AppComponent]
