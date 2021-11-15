@@ -1,6 +1,6 @@
 export class Material {
 
-    id : number;
+    id : String;
     categoria : string;
     nombre : string;
     reciclable : boolean;
