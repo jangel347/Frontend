@@ -2,7 +2,7 @@ import { Material } from "./material"
 
 export class Product {
     
-    id: number
+    id_: number
     nombre: string
     materiales: Material[]
 }

@@ -36,7 +36,7 @@ export class AddProductComponent implements OnInit {
 
   saveProduct(): void {
     const data = {
-      id: this.product.id,
+      id: this.product.id_,
       nombre: this.product.nombre,
       materiales: this.product.materiales
     };
@@ -57,7 +57,7 @@ export class AddProductComponent implements OnInit {
 
   newProduct() {
     this.submitted = false;
-    this.product.id = null;
+    this.product.id_ = null;
     this.product.nombre = null;
     this.product.materiales = null;
   }
