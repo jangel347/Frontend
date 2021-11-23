@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="card">
+        <h3 class="text-center">Lista de materiales</h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <th>CATEGORIA</th>
+                    <th>NOMBRE</th>
+                    <th>RECICLABLE</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of materialSet  ">
+                        <td>{{item.categoria}}</td>
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.reciclable}}</td>
+                        <td>
+                            <button class="btn btn-info btn-sm" (click)="triggerModal(modalData, item)">
+                                Editar </button>
+                            &nbsp;
+                            <button class='btn btn-danger btn-sm' (click)="deleteMaterial(item.id)">
+                                Eliminar </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ng-template #modalData let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Editar Material</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+        <div style="width: 400px; margin: auto;">
+            <div class="submit-form">
+                <div class="form-group">
+                    <label for="categoria">CATEGORIA</label>
+                    <input type="text" class="form-control" id="categoria" required [(ngModel)]="currentMaterial.categoria"
+                        name="categoria" />
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">NOMBRE</label>
+                    <input type="text" class="form-control" id="nombre" required [(ngModel)]="currentMaterial.nombre"
+                        name="nombre" />
+                </div>
+
+                <div class="form-group">
+
+                    <input type="checkbox" class="form-check-input" id="reciclable" [(ngModel)]="currentMaterial.reciclable"
+                        name="reciclable" />
+                    <label for="reciclable">ES RECICLABLE</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="updateMaterial()"
+            (click)="modal.close('Save click')">Guardar</button>
+    </div>
+</ng-template>
+<hr>
+
+<div class="row">
+    <div class="col-md-3">
+        <h4>Listado de Materiales</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let materialId of materialSet; let i = index" [class.active]="i == currentIndex"
+                (click)="setActiveMaterial(materialId, i)">
+                <div class="col">{{ materialId.nombre }}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<hr>
+
+<div class="card text-white bg-dark " style="max-width: 29rem;">
+    <div class="col-md-6">
+        <div *ngIf="currentMaterial">
+            <div class="card-header">
+                <label><strong>NOMBRE: </strong></label> {{ currentMaterial.nombre }}
+            </div>
+            <div class="card-body">
+
+                <label><strong>CATEGORIA: </strong></label> {{ currentMaterial.categoria }}<br>
+
+                <label><strong>ES RECICLABLE: </strong></label> {{ currentMaterial.reciclable }}<br>
+
+            </div>
+
+        </div>
+    </div>
+    <label><strong></strong></label> {{ msgError }}
+</div>

@@ -1,0 +1,6 @@
+.logo{height:60px;border-right:1px solid #dadada;margin:0 15px;padding:0 10px}
+.navbar{background-color:#1c4a38;position:fixed;width:100%}
+.collapse *{color:#fff}
+.section_main{height:100vh;width:100vw;display:flex;justify-content:left;align-items:center;background-image:url(../../../assets/reciclaje.jpeg);background-size:cover;background-repeat:no-repeat;background-position:40%}
+.text_main{width:50%;background-color:#ffffffbd}
+.text_main p{text-align:justify;font-size:20px;margin:20px 10px}
