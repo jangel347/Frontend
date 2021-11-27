@@ -1,0 +1,4 @@
+.logo{height:60px;border-right:1px solid #dadada;margin:0 15px;padding:0 10px}
+.navbar{background-color:#1c4a38;position:fixed;width:100%;z-index:10000;top:0}
+.collapse *{color:#fff}
+body{padding-top:76px}

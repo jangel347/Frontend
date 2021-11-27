@@ -40,8 +40,8 @@
             <div class="submit-form">
                 <div class="form-group">
                     <label for="categoria">CATEGORIA</label>
-                    <input type="text" class="form-control" id="categoria" required [(ngModel)]="currentMaterial.categoria"
-                        name="categoria" />
+                    <input type="text" class="form-control" id="categoria" required
+                        [(ngModel)]="currentMaterial.categoria" name="categoria" />
                 </div>
 
                 <div class="form-group">
@@ -52,8 +52,8 @@
 
                 <div class="form-group">
 
-                    <input type="checkbox" class="form-check-input" id="reciclable" [(ngModel)]="currentMaterial.reciclable"
-                        name="reciclable" />
+                    <input type="checkbox" class="form-check-input" id="reciclable"
+                        [(ngModel)]="currentMaterial.reciclable" name="reciclable" />
                     <label for="reciclable">ES RECICLABLE</label>
                 </div>
             </div>
@@ -71,8 +71,8 @@
     <div class="col-md-3">
         <h4>Listado de Materiales</h4>
         <ul class="list-group">
-            <li class="list-group-item" *ngFor="let materialId of materialSet; let i = index" [class.active]="i == currentIndex"
-                (click)="setActiveMaterial(materialId, i)">
+            <li class="list-group-item" *ngFor="let materialId of materialSet; let i = index"
+                [class.active]="i == currentIndex" (click)="setActiveMaterial(materialId, i)">
                 <div class="col">{{ materialId.nombre }}</div>
             </li>
         </ul>

@@ -1,28 +1,3 @@
-<header>
-    <nav class="navbar navbar-expand-lg">
-        <img src="./assets/green-hand-logo-light-5.png" alt="GreenHand" class="logo">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/control">Control</a>
-                </li>
-            </ul>
-        </div>
-        <form class="form-inline m-3">
-            <div class="input-group">
-                <input class="form-control ml-2" placeholder="Search product or material..." type="text" name="searchTerm" [(ngModel)]="searchTerm"
-            (input)="search($event.target.value)" />
-            </div>
-        </form>
-    </nav>
-</header>
 <section class="section_main">
     <div class="text_main p-2 text-center">
         <img src="./assets/green-hand-logo-5.png" alt="GreenHand">
@@ -35,6 +10,12 @@
 <section class="section_products" id="ProductsList">
     <h1 class="color_green p-2 pt-5">Are you looking for recycling?</h1>
     <p class="p-2">Search a product, see its details and help us to improve the planet</p>
+    <form class="form-inline m-3">
+        <div class="input-group">
+            <input class="form-control ml-2" placeholder="Search product or material..." type="text" name="searchTerm" [(ngModel)]="searchTerm"
+        (input)="search($event.target.value)" />
+        </div>
+    </form>
     <div *ngIf="productSet.length > 0" class="container">
         <div class="card" style="width:20rem;margin:20px 0 24px 0"
             *ngFor="let productItem of productSet; let i = index"  [attr.id]="'card'+productItem.id">
