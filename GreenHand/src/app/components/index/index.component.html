@@ -31,21 +31,31 @@
         </p>
     </div>
 </section>
-<section class="section_products">
-    <div class="card" style="width:20rem;margin:20px 0 24px 0" *ngFor="let productItem of productSet; let i = index">
-        <img class="card-img-top" src="./assets/producto.jpeg" alt="image" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">{{ productItem.nombre }}</h4>
-            <p class="card-text">
-                <b>Materiales:</b>
-                <label *ngFor="let materialItem of productItem.materiales; let i = index"
-                    class="w-100 d-block float-left">
-                    {{
-                    materialItem.nombre
-                    }}
-                </label>
-            </p>
-            <a class="btn btn-primary">See details</a>
+<section class="section_products" id="ProductsList">
+    <h1 class="color_green p-2 pt-5">Are you looking for recycling?</h1>
+    <p class="p-2">Search a product, see its details and help us to improve the planet</p>
+    <div *ngIf="productSet.length > 0" class="container">
+        <div class="card" style="width:20rem;margin:20px 0 24px 0"
+            *ngFor="let productItem of productSet; let i = index">
+            <img class="card-img-top" src="./assets/producto.jpeg" alt="image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">{{ productItem.nombre }}</h4>
+                <p class="card-text">
+                    <b>Materiales:</b>
+                    <label *ngFor="let materialItem of productItem.materiales; let i = index"
+                        class="w-100 d-block float-left">
+                        {{
+                        materialItem.nombre
+                        }}
+                        <fa-icon [icon]="faCheckCircle" *ngIf="materialItem.reciclable" class="text-success" title="Este material es reciclable"></fa-icon>
+                        <fa-icon [icon]="faCheckCircle" *ngIf="!materialItem.reciclable" class="text-danger" title="Este material NO es reciclable"></fa-icon>
+                    </label>
+                </p>
+            </div>
         </div>
+
     </div>
+    <h2 *ngIf="productSet.length == 0" class="w-100 text-center noData" style="height: 400px">
+        No hay productos disponibles
+    </h2>
 </section>

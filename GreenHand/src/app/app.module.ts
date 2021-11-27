@@ -12,6 +12,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { ListMaterialComponent } from './components/list-material/list-material.component';
 import { IndexComponent } from './components/index/index.component';
 import { ControlPanelComponent } from './components/control-panel/control-panel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ControlPanelComponent } from './components/control-panel/control-panel.
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    NgSelectModule
+    NgSelectModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
