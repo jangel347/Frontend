@@ -17,7 +17,8 @@
         </div>
         <form class="form-inline m-3">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search product...">
+                <input class="form-control ml-2" placeholder="Search product or material..." type="text" name="searchTerm" [(ngModel)]="searchTerm"
+            (input)="search($event.target.value)" />
             </div>
         </form>
     </nav>
@@ -36,13 +37,13 @@
     <p class="p-2">Search a product, see its details and help us to improve the planet</p>
     <div *ngIf="productSet.length > 0" class="container">
         <div class="card" style="width:20rem;margin:20px 0 24px 0"
-            *ngFor="let productItem of productSet; let i = index">
+            *ngFor="let productItem of productSet; let i = index"  [attr.id]="'card'+productItem.id">
             <img class="card-img-top" src="./assets/producto.jpeg" alt="image" style="width:100%">
             <div class="card-body">
                 <h4 class="card-title">{{ productItem.nombre }}</h4>
                 <p class="card-text">
                     <b>Materiales:</b>
-                    <label *ngFor="let materialItem of productItem.materiales; let i = index"
+                    <label *ngFor="let materialItem of productItem.materiales; let x = index"
                         class="w-100 d-block float-left">
                         {{
                         materialItem.nombre
