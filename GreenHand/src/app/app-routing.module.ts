@@ -9,9 +9,9 @@ import { ControlPanelComponent } from './components/control-panel/control-panel.
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'control', component: ControlPanelComponent },
-  { path: 'addMaterial', component: AddMaterialComponent },
-  { path: 'listMaterial', component: ListMaterialComponent },
-  { path: 'addProduct', component: AddProductComponent },
+  { path: 'control/addMaterial', component: AddMaterialComponent },
+  { path: 'control/listMaterial', component: ListMaterialComponent },
+  { path: 'control/addProduct', component: AddProductComponent },
 
 ];
 

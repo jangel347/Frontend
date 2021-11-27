@@ -11,7 +11,7 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="/control">Control</a>
                 </li>
             </ul>
         </div>
@@ -29,5 +29,23 @@
             The best recycling plan for the products of your conventional market. Know, create, innovate and do the
             right thing for our beloved planet
         </p>
+    </div>
+</section>
+<section class="section_products">
+    <div class="card" style="width:20rem;margin:20px 0 24px 0" *ngFor="let productItem of productSet; let i = index">
+        <img class="card-img-top" src="./assets/producto.jpeg" alt="image" style="width:100%">
+        <div class="card-body">
+            <h4 class="card-title">{{ productItem.nombre }}</h4>
+            <p class="card-text">
+                <b>Materiales:</b>
+                <label *ngFor="let materialItem of productItem.materiales; let i = index"
+                    class="w-100 d-block float-left">
+                    {{
+                    materialItem.nombre
+                    }}
+                </label>
+            </p>
+            <a class="btn btn-primary">See details</a>
+        </div>
     </div>
 </section>
